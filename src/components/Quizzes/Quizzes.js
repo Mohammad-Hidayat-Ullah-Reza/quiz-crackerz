@@ -7,6 +7,8 @@ const Quizzes = () => {
   return (
     <div>
       <h2>Welcome to Quizzes Page</h2>
+      <p>{quizzes.data.id}</p>
+      <p>{quizzes.data.name}</p>
     </div>
   );
 };

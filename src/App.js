@@ -26,13 +26,13 @@ function App() {
           element: <Home></Home>,
         },
         {
-          element: <Quizzes></Quizzes>,
-          path: "/:quizId",
+          path: "/quiz/:quizId",
           loader: async ({ params }) => {
             return fetch(
               `https://openapi.programming-hero.com/api/quiz/${params.quizId}`
             );
           },
+          element: <Quizzes></Quizzes>,
         },
         {
           path: "/statistic",

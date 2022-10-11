@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
       <h2>This is Home</h2>
-      <div className="grid grid-cols-2 gap-12 p-10">
+      <div className="grid grid-cols-2 gap-12 justify-items-center	 p-10">
         {topics.data.map((topic) => (
           <TopicCard key={topic.id} topic={topic}></TopicCard>
         ))}
