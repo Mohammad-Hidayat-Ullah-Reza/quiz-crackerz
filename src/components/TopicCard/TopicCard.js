@@ -9,7 +9,7 @@ const TopicCard = ({ topic }) => {
     navigate(`/quiz/${id}`);
   };
   return (
-    <div className="card w-96 glass">
+    <div className="card w-72 lg:w-96 glass">
       <figure>
         <img src={logo} alt={`logo of ${name}`} />
       </figure>
