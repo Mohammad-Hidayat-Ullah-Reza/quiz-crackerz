@@ -1,4 +1,5 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
 import {
   Bar,
   BarChart,
@@ -10,18 +11,21 @@ import {
   YAxis,
 } from "recharts";
 
-const data = [
-  { name: "React", "total number of Quiz": 8 },
-  { name: "JavaScript", "total number of Quiz": 9 },
-  { name: "CSS", "total number of Quiz": 8 },
-  { name: "Git", "total number of Quiz": 11 },
-];
-
 const Statistic = () => {
+  const totalData = useLoaderData();
+
+  const data = [];
+  for (const info of totalData.data) {
+    const obj = {};
+    obj.name = info.name;
+    obj["total number of Quiz"] = info.total;
+    data.push(obj);
+  }
+
   return (
     <div className="my-10">
       <h2 className="text-3xl font-bold text-white">
-        Statistics of <span className="text-yellow-500">total questions</span>
+        Statistics of <span className="text-yellow-500">total questions</span>{" "}
         per topic
       </h2>
       <div className="mt-10 flex justify-center items-center">

@@ -5,13 +5,13 @@ const Footer = () => {
   return (
     <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
       <div className="grid grid-flow-col gap-4">
-        <Link to="/home" className="link link-hover">
+        <Link to="/home" className="link link-hover font-bold text-xl">
           Home
         </Link>
-        <Link to="/statistic" className="link link-hover">
+        <Link to="/statistic" className="link link-hover font-bold text-xl">
           Statistic
         </Link>
-        <Link to="blog" className="link link-hover">
+        <Link to="blog" className="link link-hover font-bold text-xl">
           Blog
         </Link>
       </div>

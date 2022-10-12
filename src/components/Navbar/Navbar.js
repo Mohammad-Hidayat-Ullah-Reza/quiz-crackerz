@@ -29,8 +29,8 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <div className="navbar-end">
-        <div className="md:hidden dropdown">
+      <div className="md:hidden navbar-end">
+        <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
