@@ -13,8 +13,8 @@ const TopicCard = ({ topic }) => {
       <figure>
         <img src={logo} alt={`logo of ${name}`} />
       </figure>
-      <div className="card-body">
-        <h2 className="card-title">{name}</h2>
+      <div className="card-body text-white">
+        <h2 className="card-title text-4xl">{name}</h2>
         <p className="text-left">Total Quizzes: {total}</p>
         <div className="card-actions justify-end">
           <button onClick={() => handleNavigate()} className="btn btn-primary">
