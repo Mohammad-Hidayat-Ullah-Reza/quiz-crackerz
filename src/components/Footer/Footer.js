@@ -8,7 +8,7 @@ const Footer = () => {
         <Link to="/home" className="link link-hover">
           Home
         </Link>
-        <Link to="/statistics" className="link link-hover">
+        <Link to="/statistic" className="link link-hover">
           Statistic
         </Link>
         <Link to="blog" className="link link-hover">

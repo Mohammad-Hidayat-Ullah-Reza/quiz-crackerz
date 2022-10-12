@@ -1,6 +1,7 @@
 import React from "react";
+import { EyeIcon } from "@heroicons/react/24/solid";
 
-const Quiz = ({ qus, HandleAnsCheck }) => {
+const Quiz = ({ qus, HandleAnsCheck, showCorrectAns }) => {
   const { id, correctAnswer, options, question } = qus;
   const checkAns = (option) => {
     if (option === correctAnswer) {
@@ -12,6 +13,10 @@ const Quiz = ({ qus, HandleAnsCheck }) => {
 
   return (
     <div className="p-5 m-5 border border-white rounded-md">
+      <EyeIcon
+        onClick={() => showCorrectAns(correctAnswer)}
+        className="h-6 w-6 text-blue-500 ml-auto"
+      />
       {/* question */}
       <h4 className="mb-5 text-white text-xl">{question.slice(3, -4)}</h4>
       {/* options */}

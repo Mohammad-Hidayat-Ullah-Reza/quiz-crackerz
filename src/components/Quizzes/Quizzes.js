@@ -10,40 +10,26 @@ const Quizzes = () => {
   const questions = quizzes.data.questions;
   const HandleAnsCheck = (checkedAns) => {
     if (checkedAns) {
-      toast("Correct Answer!!!", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      notify("Correct Answer!!!");
     } else {
-      toast("Opps!!! Wrong answer.", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      notify("Opps!!! Wrong answer.");
     }
   };
-  // const notify = () =>
-  //   toast("🦄 Wow so easy!", {
-  //     position: "top-center",
-  //     autoClose: 5000,
-  //     hideProgressBar: false,
-  //     closeOnClick: true,
-  //     pauseOnHover: true,
-  //     draggable: true,
-  //     progress: undefined,
-  //     theme: "light",
-  //   });
+  const showCorrectAns = (correctAns) => {
+    // console.log(para);
+    notify("Correct Answer: " + correctAns);
+  };
+  const notify = (text) =>
+    toast(text, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
 
   return (
     <div>
@@ -52,7 +38,12 @@ const Quizzes = () => {
       </h2>
       <div className="grid grid-cols-2">
         {questions.map((qus) => (
-          <Quiz key={qus.id} qus={qus} HandleAnsCheck={HandleAnsCheck}></Quiz>
+          <Quiz
+            key={qus.id}
+            qus={qus}
+            HandleAnsCheck={HandleAnsCheck}
+            showCorrectAns={showCorrectAns}
+          ></Quiz>
         ))}
       </div>
 
