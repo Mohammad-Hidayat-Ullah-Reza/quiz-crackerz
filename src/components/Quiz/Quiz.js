@@ -1,8 +1,15 @@
 import React from "react";
 
-const Quiz = ({ qus }) => {
+const Quiz = ({ qus, HandleAnsCheck }) => {
   const { id, correctAnswer, options, question } = qus;
-  console.log(qus);
+  const checkAns = (option) => {
+    if (option === correctAnswer) {
+      HandleAnsCheck(true);
+    } else {
+      HandleAnsCheck(false);
+    }
+  };
+
   return (
     <div className="p-5 m-5 border border-white rounded-md">
       {/* question */}
@@ -14,6 +21,7 @@ const Quiz = ({ qus }) => {
             <div className="form-control w-fit">
               <label className="label cursor-pointer">
                 <input
+                  onClick={() => checkAns(option)}
                   type="radio"
                   name="radio-6"
                   className="mr-4 radio bg-white checked:bg-blue-500"
