@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { EyeIcon } from "@heroicons/react/24/solid";
 
 const Quiz = ({ qus, HandleAnsCheck, showCorrectAns }) => {
+  const [disableBtn, setDisabelBtn] = useState(false);
   const { id, correctAnswer, options, question } = qus;
   const checkAns = (option) => {
     if (option === correctAnswer) {
@@ -9,6 +10,7 @@ const Quiz = ({ qus, HandleAnsCheck, showCorrectAns }) => {
     } else {
       HandleAnsCheck(false);
     }
+    setDisabelBtn(true);
   };
 
   return (
@@ -21,16 +23,16 @@ const Quiz = ({ qus, HandleAnsCheck, showCorrectAns }) => {
       <h4 className="mb-5 text-white text-xl">{question.slice(3, -4)}</h4>
       {/* options */}
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        {options.map((option) => {
+        {options.map((option, index) => {
           return (
-            <div className="form-control w-fit">
+            <div key={id + index} className="form-control w-fit">
               <label className="label cursor-pointer">
                 <input
                   onClick={() => checkAns(option)}
                   type="radio"
                   name="radio-6"
                   className="mr-4 radio bg-white checked:bg-blue-500"
-                  checked
+                  {...(disableBtn && { disabled: true })}
                 />
                 <span className="label-text text-white">{option}</span>
               </label>
