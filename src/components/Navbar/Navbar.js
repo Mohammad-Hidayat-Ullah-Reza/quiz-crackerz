@@ -5,7 +5,10 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
+        <Link
+          to="/"
+          className="btn btn-ghost normal-case text-xl font-semibold text-orange-800"
+        >
           <img
             className="w-5 mr-3"
             src="/logo.png"
@@ -15,7 +18,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="hidden md:block flex-none">
-        <ul className="menu menu-horizontal p-0">
+        <ul className="menu menu-horizontal p-0 font-semibold text-orange-800">
           <li>
             <Link to="/home">Home</Link>
           </li>
