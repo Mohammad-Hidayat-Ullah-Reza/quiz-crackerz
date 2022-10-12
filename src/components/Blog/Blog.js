@@ -11,9 +11,9 @@ const Blog = () => {
       answer: `The React Context API is a way for a React app to effectively produce global variables that can be passed around. This is the alternative to "prop drilling" or moving props from grandparent to child to parent, and so on. Context is also touted as an easier, lighter approach to state management using Redux.React.createContext() is all you need. It returns a consumer and a provider. Provider is a component that as it's names suggests provides the state to its children. It will hold the "store" and be the parent of all the components that might need that store. Consumer as it so happens is a component that consumes and uses the state.`,
     },
     {
-      question: "useHref() Hook",
+      question: "useRef() Hook :",
       answer:
-        "<Link></Link> component is used to link anything inside of React Router. But if you want to link anything outside of React Router you need to useHref() hook. useHref() will take you to that location.",
+        "The useRef() hook allows you to persist value between renders. The useRef() returns a mutable object, which has a .current property. .current property has the value that's provided initially in the useRef() hook.",
     },
   ];
 
