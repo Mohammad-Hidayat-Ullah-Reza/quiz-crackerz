@@ -15,12 +15,12 @@ const Quiz = ({ qus, HandleAnsCheck, showCorrectAns }) => {
     <div className="p-5 m-5 border border-white rounded-md">
       <EyeIcon
         onClick={() => showCorrectAns(correctAnswer)}
-        className="h-6 w-6 text-blue-500 ml-auto"
+        className="h-6 w-6 text-white ml-auto"
       />
       {/* question */}
       <h4 className="mb-5 text-white text-xl">{question.slice(3, -4)}</h4>
       {/* options */}
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
         {options.map((option) => {
           return (
             <div className="form-control w-fit">
